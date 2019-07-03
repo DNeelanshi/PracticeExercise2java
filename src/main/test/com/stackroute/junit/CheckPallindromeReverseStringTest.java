@@ -11,13 +11,13 @@ public class CheckPallindromeReverseStringTest {
     CheckPallindromeReverseString obj;
     @Before
     public void setup(){
-        System.out.println("Before");
+
         obj = new CheckPallindromeReverseString();
     }
 
     @After
     public void teardown(){
-        System.out.println("After");
+
         obj = null;
     }
 
@@ -50,7 +50,32 @@ public class CheckPallindromeReverseStringTest {
 
     }
 
+    @Test
+    public void  givenNegativeShouldReturnNull (){
+
+        //Arrange
+
+        //Act
+        String result =  obj.checkpallindrome(-534);
 
 
+        //Assert
+        assertNotEquals(null,result);
+
+    }
+
+    @Test
+    public void  givenalphanumerichouldReturnValue (){
+
+        //Arrange
+
+        //Act
+        String result =  obj.checkpallindrome(0);
+
+
+        //Assert
+        assertNotEquals(0,result);
+
+    }
 
 }

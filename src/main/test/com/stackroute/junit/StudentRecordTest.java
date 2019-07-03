@@ -14,13 +14,13 @@ public class StudentRecordTest {
 
     @Before
     public void setup(){
-        System.out.println("Before");
+
         obj = new StudentRecord();
     }
 
     @After
     public void teardown(){
-        System.out.println("After");
+
         obj = null;
     }
 
@@ -34,6 +34,19 @@ public class StudentRecordTest {
 
         //Assert
         assertEquals(50,obj.averagemarks(inputarray));
+        assertNotEquals(100,obj.averagemarks(inputarray));
+
+    }
+
+    @Test
+    public void  givenArrayNUllShouldReturnAverage (){
+
+        //Arrange
+        int inputarray[] = null;
+        //Act
+
+        //Assert
+        assertEquals(0,obj.averagemarks(inputarray));
         assertNotEquals(100,obj.averagemarks(inputarray));
 
     }
@@ -66,5 +79,18 @@ public class StudentRecordTest {
 
     }
 
+    @Test
+    public void  givenArrayNegativeShouldReturnHIghestMarks (){
+
+        //Arrange
+        int inputArray[]={-23,87,-12,39};
+
+        //Act
+
+        //Assert
+        assertEquals(87,obj.highestmarks(inputArray));
+        assertNotEquals(39,obj.highestmarks(inputArray));
+
+    }
 
 }

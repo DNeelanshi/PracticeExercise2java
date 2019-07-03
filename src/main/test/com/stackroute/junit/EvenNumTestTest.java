@@ -11,13 +11,13 @@ public class EvenNumTestTest {
     EvenNumTest obj;
     @Before
     public void setup(){
-        System.out.println("Before");
+
         obj = new EvenNumTest();
     }
 
     @After
     public void teardown(){
-        System.out.println("After");
+
         obj = null;
     }
 
@@ -50,7 +50,33 @@ public class EvenNumTestTest {
 
     }
 
+    @Test
+    public void  givenNegativeShouldReturnfalse (){
 
+        //Arrange
+
+        //Act
+        boolean result =  obj.isEven(-19);
+
+
+        //Assert
+        assertEquals(false,result);
+
+    }
+
+    @Test
+    public void  givenNUllShouldReturntrue (){
+
+        //Arrange
+
+        //Act
+        boolean result =  obj.isEven(-56);
+
+
+        //Assert
+        assertEquals(true,result);
+
+    }
 
 
 }

@@ -11,13 +11,13 @@ public class PowerofFourTest {
     PowerofFour obj;
     @Before
     public void setup(){
-        System.out.println("Before");
+
         obj = new PowerofFour();
     }
 
     @After
     public void teardown(){
-        System.out.println("After");
+
         obj = null;
     }
 
@@ -49,5 +49,29 @@ public class PowerofFourTest {
 
     }
 
+    @Test
+    public void  givenNegativeShouldReturnfalse (){
+
+        //Arrange
+        Boolean expectedValue =false;
+        //Act
+
+        Boolean actualValue = obj.checkpoeroffour(-44);
+        //Assert
+        assertEquals(expectedValue,actualValue);
+
+    }
+
+    @Test
+    public void  givenNumberZeroShouldReturnfalse (){
+
+        //Arrange
+        Boolean expectedValue = true;
+        //Act
+
+        Boolean actualValue = obj.checkpoeroffour(0);
+        //Assert
+         assertNotEquals(expectedValue,actualValue);
+    }
 
 }

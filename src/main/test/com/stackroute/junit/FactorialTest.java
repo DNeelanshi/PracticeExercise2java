@@ -11,13 +11,13 @@ public class FactorialTest {
     Factorial obj;
     @Before
     public void setup(){
-        System.out.println("Before");
+
         obj = new Factorial();
     }
 
     @After
     public void teardown(){
-        System.out.println("After");
+
         obj = null;
     }
 
@@ -37,5 +37,29 @@ public class FactorialTest {
 
 
     }
+    @Test
+    public void  givenLOngNUmberShouldFactorial (){
+
+        //Arrange
+
+        //Act
+
+        //Assert
+        assertEquals(0,obj.longFactorial(400));
+
+    }
+    @Test
+    public void  givenNegativeNUmberShouldFactorial (){
+
+        //Arrange
+
+        //Act
+
+        //Assert
+        assertEquals(0,obj.longFactorial(-4));
+
+
+    }
+
 
 }

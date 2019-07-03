@@ -14,7 +14,7 @@ public class MemberTest {
     Member.MemberVariable obj2;
     @Before
     public void setup(){
-        System.out.println("Before");
+
         obj = new Member();
         obj2 = obj.new MemberVariable();
 
@@ -22,7 +22,7 @@ public class MemberTest {
 
     @After
     public void teardown(){
-        System.out.println("After");
+
         obj = null;
     }
 
@@ -38,6 +38,32 @@ public class MemberTest {
         assertArrayEquals(expectedValue, actualValue);
 
         assertNotNull(actualValue);
+
+    }
+
+    @Test
+    public void  givenzerosalaryandageShouldreturnerror (){
+        //Arrange
+        String [] expectedValue = null;
+
+        //Act
+        String [] actualValue = obj2.isMember("Harry Potter",0,0);
+        //Assert
+        assertArrayEquals(expectedValue, actualValue);
+
+
+    }
+
+    @Test
+    public void  givenwronginputsShouldreturnNull (){
+        //Arrange
+        String [] expectedValue = null;
+
+        //Act
+        String [] actualValue = obj2.isMember(" ",-56,-89);
+        //Assert
+        assertArrayEquals(expectedValue, actualValue);
+
 
     }
 
